@@ -15,7 +15,7 @@ module.exports = async () => {
     await page.goto('http://localhost:3000');
 
     // get element of DOM
-    let logo = await page.waitForSelector("#rectangulo-marron")
+    let logo = await page.waitForSelector("#logo")
 
     // se guarda el screenshot de la imagen
     await logo.screenshot({
