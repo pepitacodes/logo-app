@@ -68,7 +68,10 @@ button {
 h1, h2, p {
   color: black;
 }
-
+hr {
+  width: 50%!important;
+  margin: 0;
+}
 .logo-categoria, .logo-leyenda{
   width: 50%;
 }

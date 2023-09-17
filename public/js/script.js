@@ -20,6 +20,16 @@ const IMAGES_DATA = {
         "10-46",
         "Adulta-44"
     ],
+    descriptores: [
+        "ComplejidadTematicas", 
+        "ComportamientosPeligrosos", 
+        "Discriminacion", 
+        "LenguajeInapropiado", 
+        "Miedo", 
+        "Sexo", 
+        "SustanciasPsicoactivas", 
+        "Violencia"
+    ],
     ddDataSinReserva: [],
     ddDataConReserva: [],
     ddDataLeyendas: []
@@ -83,10 +93,44 @@ function cargarSelectLeyendas(){
 }
 
 
-function cargarCheckboxDescriptores(){
-
-    let imgSrc = IMAGES_DATA.descriptores;
-}
+function cargarCheckboxDescriptores() {
+    var checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    var imagenContainer = document.getElementById("imagenContainer");
+    var imagenesSeleccionadas = []; // Array para almacenar las imágenes seleccionadas
+  
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener("click", function () {
+        var descriptor = checkbox.getAttribute("name"); // Obtener el nombre del descriptor
+  
+        if (checkbox.checked) {
+          // Si el checkbox está seleccionado, agrega la imagen al array
+          var imagen = document.createElement("img");
+          imagen.src = `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
+          imagen.width = 200;
+          imagenesSeleccionadas.push(imagen);
+        } else {
+          // Si no está seleccionado, elimina la imagen del array
+          var index = imagenesSeleccionadas.findIndex(function (img) {
+            return img.src === `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
+          });
+          if (index !== -1) {
+            imagenesSeleccionadas.splice(index, 1);
+          }
+        }
+  
+        // Actualiza el contenido del contenedor de imágenes con las imágenes seleccionadas
+        imagenContainer.innerHTML = "";
+        imagenesSeleccionadas.forEach(function (img) {
+          imagenContainer.appendChild(img);
+        });
+      });
+    });
+  }
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    cargarCheckboxDescriptores();
+  });
+  
 
 
 
