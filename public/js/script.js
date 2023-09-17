@@ -91,37 +91,31 @@ function cargarSelectLeyendas(){
     }
 
 }
-
-
 function cargarCheckboxDescriptores() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     var imagenContainer = document.getElementById("imagenContainer");
-    var imagenesSeleccionadas = []; // Array para almacenar las imágenes seleccionadas
+    var imagenesSeleccionadas = [];
   
     checkboxes.forEach(function (checkbox) {
-      checkbox.addEventListener("click", function () {
-        var descriptor = checkbox.getAttribute("name"); // Obtener el nombre del descriptor
+      checkbox.addEventListener("change", function () {
+        var descriptor = checkbox.getAttribute("name");
   
         if (checkbox.checked) {
-          // Si el checkbox está seleccionado, agrega la imagen al array
           var imagen = document.createElement("img");
           imagen.src = `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
           imagen.width = 200;
-          imagenesSeleccionadas.push(imagen);
+          imagenesSeleccionadas.push({ checkbox, imagen }); // Agregar checkbox e imagen al array
         } else {
-          // Si no está seleccionado, elimina la imagen del array
-          var index = imagenesSeleccionadas.findIndex(function (img) {
-            return img.src === `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
+          // Filtrar el array para eliminar el elemento correspondiente
+          imagenesSeleccionadas = imagenesSeleccionadas.filter(function (item) {
+            return item.checkbox !== checkbox;
           });
-          if (index !== -1) {
-            imagenesSeleccionadas.splice(index, 1);
-          }
         }
   
-        // Actualiza el contenido del contenedor de imágenes con las imágenes seleccionadas
+        // Actualizar el contenido del contenedor de imágenes
         imagenContainer.innerHTML = "";
-        imagenesSeleccionadas.forEach(function (img) {
-          imagenContainer.appendChild(img);
+        imagenesSeleccionadas.forEach(function (item) {
+          imagenContainer.appendChild(item.imagen);
         });
       });
     });
