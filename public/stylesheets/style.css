@@ -9,12 +9,20 @@ button {
   width: 250px;
   border-radius: 30px;
   border: black solid 5px;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   text-transform: uppercase;
   font-weight: 600;
   line-height: 2rem;
-  margin-top: 2rem;
+  margin: 2rem auto;
+  transition: background-color 0.3s, color 0.3s, transform 0.5s;
+}
+button:hover {
+  background-color: black;
+  color: white;
+  box-shadow: 0 4px 6px rgba(41, 40, 40, 0.1);
+  transform: scale(1.20);
+  cursor: pointer;
 }
 .main-container {
   width: 100%;
@@ -52,7 +60,7 @@ button {
   flex-direction: column;
   flex-grow: 0.5;
 }
-.second-container {
+.imagenContainer {
   display: flex;
   flex-direction: column;
   flex-grow: 0.5;
@@ -65,6 +73,10 @@ button {
   display: block;
   text-align: center;
 }
+h1 {
+  text-align: center;
+  margin: 0;
+}
 h1, h2, p {
   color: black;
 }
@@ -73,7 +85,7 @@ hr {
   margin: 0;
 }
 .logo-categoria, .logo-leyenda{
-  width: 50%;
+  flex-basis: 50%;
 }
 .footer-img {
   width: 100%;
@@ -107,4 +119,8 @@ hr {
 
   max-width: 150px !important;
 
+}
+.button-div {
+  display: flex;
+  align-items: center;
 }

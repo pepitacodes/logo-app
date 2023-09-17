@@ -1,7 +1,6 @@
 <html>
-
 <head>
-  <title>Express</title>
+  <title>Generador de Logos</title>
   <link rel="stylesheet" href="./stylesheets/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.min.js" integrity="sha512-sNylduh9fqpYUK5OYXWcBleGzbZInWj8yCJAU57r1dpSK9tP2ghf/SRYCMj+KsslFkCOt3TvJrX2AV/Gc3wOqA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -10,22 +9,23 @@
 </head>
 <body>
   <div class="main-container">
+    <h1>Generador de Logos</h1>
     <div class="select-area">  
       <div class="select-container">
-          <h1>Categoría</h1>
+          <h2>Categoría</h2>
           <select id="select-categoria-sinreserva">
           </select>
           <select id="select-categoria-conreserva">
           </select>
       </div>
       <div class="leyenda-container">
-          <h1>Leyenda</h1>
+          <h2>Leyenda</h2>
           <select id="select-leyenda">
             <option value="sinleyenda">Sin leyenda</option>
           </select>
       </div>
       <div class="descriptores-container">
-        <h1>Descriptores Tematicos</h1>
+        <h2>Descriptores Tematicos</h2>
           <div class="descriptores">
             <input type="checkbox" id="ComplejidadTematicas" name="ComplejidadTematicas" value="ComplejidadTematicas">
             <label for="ComplejidadTematicas"><img src="./assets/descriptores-tematicos/descriporestrans/ComplejidadTematicas.png" width="200px"></label><br>
@@ -44,37 +44,31 @@
             <input type="checkbox" id="Violencia" name="Violencia" value="Violencia">
             <label for="violencia"><img src="./assets/descriptores-tematicos/descriporestrans/Violencia.png" width="200px"></label><br>
           </div>
-      </div>    
-    </div>
-
-
-    <div class="logo-container" id="logo">
-      <div class="images-container">
-        <div class="first-container">
-          <div class="first-container" id="logo-categoria">  
+        </div>    
+      </div>
+      <div class="logo-container" id="logo">
+        <div class="images-container">
+          <div class="first-container">
+            <div class="first-container" id="logo-categoria"></div>
+            <hr id="categoria-separacion" style="color: white; width: 90%;">
+            <div id="logo-leyenda"></div>
           </div>
-          <hr id="categoria-separacion" style="color: white; width: 90%;">
-          <div id="logo-leyenda">
-          </div>
-        </div>
         <div id="imagenContainer"></div>
-
-        </div>  
-      </div>
+      </div>  
       <div class="footer">
-        <img class="footer-img" src="./assets/footer-a.png">
-      </div>
-    
+        <img class="footer-img" src="./assets/footer-b.png">
+      </div>   
+    </div>  
+ 
+    <div class="button-div">
+      <button onclick="descargarLogo()">Descargar logo</button>
     </div>
-  </div>  
- 
-  <button onclick="descargarLogo()">Descargar logo</button>
+   
   
  
-  <script src="./js/script.js" type="text/javascript">
+    <script src="./js/script.js">
   
-  </script>
-</body>
-
-    </html>
+    </script>
+  </body>
+</html>
 
