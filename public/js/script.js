@@ -103,7 +103,7 @@ function cargarCheckboxDescriptores() {
         if (checkbox.checked) {
           var imagen = document.createElement("img");
           imagen.src = `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
-          imagen.width = 200;
+          imagen.width = 380;
           imagenesSeleccionadas.push({ checkbox, imagen }); // Agregar checkbox e imagen al array
         } else {
           // Filtrar el array para eliminar el elemento correspondiente
