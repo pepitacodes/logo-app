@@ -125,13 +125,27 @@ function cargarCheckboxDescriptores() {
 
 
 function descargarLogo(){
-    html2canvas(document.querySelector("#logo")).then((canvas) => {
+
+    var scaleBy = 5;
+    var w = 1920;
+    var h = 1080;
+    var div = document.querySelector("#logo");
+    var canvas1 = document.createElement('canvas')
+    canvas1.width = w * scaleBy;
+    canvas1.height = h * scaleBy;
+    canvas1.style.width = w + 'px';
+    canvas1.style.height = h + 'px';
+    var context = canvas1.getContext('2d');
+    context.scale(scaleBy, scaleBy);
+
+    html2canvas(div, {
+        canvas:canvas1,
+    }).then((canvas2) => {
         let a = document.createElement('a');
         document.body.appendChild(a)
-        a.href = canvas.toDataURL("image/png", 1.0);
+        a.href = canvas2.toDataURL("image/png");
         a.download = 'logo.png';
         a.click();
-        
     })
 }
 
