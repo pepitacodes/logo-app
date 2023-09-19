@@ -46,24 +46,24 @@ button:hover {
   background-color: black;
 }
 .images-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   margin: 0 auto;
+  align-items: flex-start;
 }
 .descriptores {
   background-color: rgb(43, 43, 43);;
 }
 .first-container {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 0.5;
+  width: 100%;
+}
+.first-container img {
+  width: 100%;
 }
 .imagenContainer {
   display: flex;
   flex-direction: column;
-  flex-grow: 0.5;
+  align-items: flex-start;
 }
 .third-container {
   display: flex;
@@ -81,11 +81,9 @@ h1, h2, p {
   color: black;
 }
 hr {
-  width: 50%!important;
-  margin: 0;
-}
-.logo-categoria, .logo-leyenda{
-  flex-basis: 50%;
+  color: white;
+  width: 93%;
+  margin: auto;
 }
 .footer-img {
   width: 100%;
