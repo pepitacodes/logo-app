@@ -103,7 +103,7 @@ function cargarCheckboxDescriptores() {
         if (checkbox.checked) {
           var imagen = document.createElement("img");
           imagen.src = `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
-          imagen.width = 380;
+          imagen.width = 330;
           imagenesSeleccionadas.push({ checkbox, imagen }); // Agregar checkbox e imagen al array
         } else {
           // Filtrar el array para eliminar el elemento correspondiente
@@ -120,10 +120,6 @@ function cargarCheckboxDescriptores() {
       });
     });
   }
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    cargarCheckboxDescriptores();
-  });
   
 
 
@@ -146,6 +142,8 @@ document.addEventListener("DOMContentLoaded", function(){
     cargarSelectCategorias()
 
     cargarSelectLeyendas()
+
+    cargarCheckboxDescriptores();
 
     selectCatSinReserva.ddslick({
         data: IMAGES_DATA.ddDataSinReserva,
@@ -183,5 +181,12 @@ document.addEventListener("DOMContentLoaded", function(){
       
         }
     })
+
+/* Funcion para sacar estilos de hover*/
+const boton = document.getElementById("miBoton");
+
+setTimeout(function () {
+boton.style.transition = "background-color 0.3s, color 0.3s, transform 0.5s";
+}, 3000);
 
 })

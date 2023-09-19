@@ -34,19 +34,20 @@ button {
   color: black;
   text-transform: uppercase;
   font-weight: 600;
+  letter-spacing: 1px;
   line-height: 2rem;
   margin: 2rem auto;
-  transition: background-color 0.3s, color 0.3s, transform 0.5s;
 }
 button:hover {
   background-color: black;
   color: white;
+  letter-spacing: 1.5px;
   box-shadow: 0 4px 6px rgba(41, 40, 40, 0.1);
   transform: scale(1.20);
   cursor: pointer;
 }
 .logo-container {
-  margin-top: 4rem;
+  margin: 5%;
   background-color: black;
   max-width: 100%;
 }
@@ -109,6 +110,7 @@ hr {
 }
 .footer-img {
   width: 100%;
+  padding-top: 50px;
 }
 /* ddSlick */
 .dd-select{
