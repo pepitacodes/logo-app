@@ -142,7 +142,9 @@ function descargarLogo(){
 // Manejo de errores: input vacio
     html2canvas(div, {
         canvas:canvas1,
-        border: 0, 
+        border: 0,
+        height: div.offsetHeight - 1,
+        width: div.offsetWidth -1,
         imageSmoothingEnabled: false
     })
     .then((canvas2) => {
