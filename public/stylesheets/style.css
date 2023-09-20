@@ -1,14 +1,31 @@
+:root {
+	--azul-principal: rgb(23, 6, 124);
+	--azul-secundario: rgb(41, 43, 168);
+	--color-fondo: rgb(0,0, 0);
+  --color-letra-blanca: #FFFFFF;
+	--gris: #666666;
+  --fuente-helvetica: 'Helvetica Neue LT Pro', sans-serif;
+  --estilo-letra: uppercase;
+}
+
 body {
   padding: 50px;
   padding-top: 10px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: var(--fuente-helvetica);
+  text-transform: var(--estilo-letra);
 }
 h1 {
-  text-align: center;
-  margin-bottom: auto;
+    text-align: center;
+    margin-bottom: auto;
+    font-size: 30px;
+    letter-spacing: 4px;
+    font-weight: bold;
+    display: block;
+    color: var(--color-fondo);
 }
-h1, h2, p {
+h2, p {
   color: black;
+  color: var(--color-letra-blanca);
 }
 /*
 .barra-vertical {
@@ -30,6 +47,10 @@ h1, h2, p {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   padding-top: 50px; 
+  margin: 5%;
+  padding: 3%;
+  margin-top: 30px;
+  background-color: var(--color-fondo);
 }
 a {
   color: #00B7FF;
@@ -45,8 +66,9 @@ button {
   color: black;
   text-transform: uppercase;
   font-weight: 600;
+  font-size: larger;
   letter-spacing: 1px;
-  line-height: 2rem;
+  line-height: 3rem;
   margin: 2rem auto;
 }
 button:hover {
@@ -76,7 +98,7 @@ button:hover {
  width: 100%;
 }
 .descriptores {
-  background-color: rgb(43, 43, 43);
+  background-color: var(--color-fondo);
   display: grid;
   grid-template-columns: 50px 0.5fr 10px; 
   padding: 3%;
@@ -136,15 +158,15 @@ hr {
   height: 100px;
 }
 .dd-option, .dd-selected{
-  background-color: rgb(43, 43, 43);
+  background-color: var(--color-fondo);
   color: white !important;
 }
 .dd-option:hover{
-  background-color: rgb(68, 68, 68) !important;
+  background-color: var(--color-fondo) !important;
 }
 
 .dd-option-selected{
-  background-color: rgb(68, 68, 68) !important;
+  background-color: var(--color-fondo) !important;
 }
 
 .dd-selected-image, .dd-option-image {
