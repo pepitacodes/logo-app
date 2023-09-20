@@ -139,15 +139,14 @@ function descargarLogo(){
     var context = canvas1.getContext('2d');
     context.scale(scaleBy, scaleBy);
 
-// Manejo de errores: inout vacio
-  var input = document.querySelector("#input");
-  if (!input) {
-    alert("El input esta vacio");
+// Manejo de errores: input vacio
+if (!logo) {
+    // Mostrar un mensaje de error
+    alert("No se han ingresado imágenes.");
     return;
   }
-
-  
-
+    
+    
     html2canvas(div, {
         canvas:canvas1,
     }).then((canvas2) => {
@@ -155,7 +154,13 @@ function descargarLogo(){
         document.body.appendChild(a)
         a.href = canvas2.toDataURL("image/png");
         //nombre del archivo con el cual se descarga 
-        a.download = 'logo.png';
+        var nombreLogo = prompt("Ingrese el nombre del archivo: ");
+        if (!nombreLogo) {
+            // Mostrar un mensaje de error
+            alert("Ingrese el nombre del archivo.");
+            return;
+          }
+        a.download = nombreLogo + '.png';
         a.click();
     })
 }
