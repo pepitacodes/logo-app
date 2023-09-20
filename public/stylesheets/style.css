@@ -147,12 +147,14 @@ hr {
   width: 100%;
   padding-top: 50px;
 }
+
 /* ddSlick */
+/*Estilos del select*/
 .dd-select{
   height: max-content;
 }
 .dd-container {
-  width: 400px;
+  width: 600px;
 }
 .dd-selected{
   height: 100px;
