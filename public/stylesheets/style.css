@@ -171,6 +171,7 @@ hr {
 .dd-option, .dd-selected{
   background-color: var(--color-fondo);
   color: white !important;
+  min-height: 2rem;
 }
 .dd-option:hover{
   background-color: var(--color-fondo) !important;
@@ -181,7 +182,7 @@ hr {
 }
 
 .dd-selected-image, .dd-option-image {
-  max-width: 200px !important;
+  max-width: 240px !important;
 }
 .button-div {
   display: flex;
