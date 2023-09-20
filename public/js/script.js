@@ -18,7 +18,8 @@ const IMAGES_DATA = {
     leyendas: [
         "7-45",
         "10-46",
-        "Adulta-44"
+        "Adulta-44", 
+        "ConReservas-43"
     ],
     descriptores: [
         "ComplejidadTematicas", 
@@ -138,12 +139,22 @@ function descargarLogo(){
     var context = canvas1.getContext('2d');
     context.scale(scaleBy, scaleBy);
 
+// Manejo de errores: inout vacio
+  var input = document.querySelector("#input");
+  if (!input) {
+    alert("El input esta vacio");
+    return;
+  }
+
+  
+
     html2canvas(div, {
         canvas:canvas1,
     }).then((canvas2) => {
         let a = document.createElement('a');
         document.body.appendChild(a)
         a.href = canvas2.toDataURL("image/png");
+        //nombre del archivo con el cual se descarga 
         a.download = 'logo.png';
         a.click();
     })
