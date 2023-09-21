@@ -83,13 +83,12 @@ button:hover {
   cursor: pointer;
 }
 .logo-container {
-  margin: 5%;
   background-color: black;
-  max-width: 100%;
   border: 0px;
-  padding-bottom: 0px;
-  margin-bottom: 0px;
-
+  width: 1920px;
+  height: 800px;
+  zoom: 60%;
+  margin: auto;
 }
 .images-container {
   padding-top: 100px;
@@ -132,12 +131,11 @@ button:hover {
   flex-grow: 0.5;
 }
 .first-container img {
-  max-width: 420px;
-  height: auto; 
+  height: auto;
+  max-width: 100%; 
 }
 .imagenContainer img {
   margin: auto 5px;
-  width: 100%;
 }
 .third-container {
   display: flex;
@@ -153,9 +151,10 @@ hr {
   text-align: center;
   margin-top: 70px;
   border: none;
+  width: fit-content;
 }
 .footer img {
-  width: 100%;
+  width: 100% !important;
   padding-top: 50px;
   border: none;
   outline: 0 !important;
