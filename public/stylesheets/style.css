@@ -48,7 +48,7 @@ h2, p {
 }
 .select-area {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 0.8fr 1.1fr 1fr;
   padding-top: 50px; 
   margin: 5%;
   padding: 3%;
@@ -103,11 +103,15 @@ button:hover {
 .descriptores-container {
  width: 100%;
 }
+.descriptores-title {
+  text-indent: 20px;
+}
 .descriptores {
   background-color: var(--color-fondo);
   display: grid;
   grid-template-columns: 50px 0.5fr 10px; 
   padding: 3%;
+  padding-top: 0px;
   grid-gap: 10px; 
 }
 .descriptores label {
