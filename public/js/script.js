@@ -40,10 +40,11 @@ let selectCatSinReserva = $("#select-categoria-sinreserva");
 let selectCatConReserva = $("#select-categoria-conreserva");
 let selectLeyenda = $("#select-leyenda");
 let checkboxDescriptores = $("#checkbox-descriptores");
+let categorias = IMAGES_DATA.categorias;
 
-function cargarSelectCategorias(){
+function cargarSelectCategoriasSinreserva(){
 
-    let categorias = IMAGES_DATA.categorias;
+    selectCatSinReserva.innerHTML = "";
 
     for (const cat of categorias.sinreserva) {
 
@@ -58,6 +59,22 @@ function cargarSelectCategorias(){
         })
     }
 
+    selectCatSinReserva.ddslick({
+        data: IMAGES_DATA.ddDataSinReserva,
+        selectText: "Categoría sin reservas",
+        onSelected: function(data){
+            document.getElementById("logo-categoria").innerHTML = `
+                <div><img class="logo-categoria" src="${data.selectedData.value}"></div>
+            `
+        }   
+    });
+
+}
+
+function cargarSelectCategoriasConreserva(){
+
+    selectCatConReserva.innerHTML = "";
+
     for (const cat of categorias.conreserva) {
 
         let imgUrl = "assets/calificacion-edad/Caec_" + cat + "Trans.png";
@@ -70,6 +87,16 @@ function cargarSelectCategorias(){
             selected: false
         })
     }
+
+    selectCatConReserva.ddslick({
+        data: IMAGES_DATA.ddDataConReserva,
+        selectText: "Categoría con reservas",
+        onSelected: function(data){
+            document.getElementById("logo-categoria").innerHTML = `
+                <div><img class="logo-categoria" src="${data.selectedData.value}"></div>
+            `
+        }   
+    });
 
 }
 
@@ -91,7 +118,24 @@ function cargarSelectLeyendas(){
         })
     }
 
+    selectLeyenda.ddslick({
+        data: IMAGES_DATA.ddDataLeyendas,
+        selectText: "Leyenda",
+        width: 350,
+        onSelected: function(data){
+            if(data.selectedData.value=="sinleyenda"){
+                document.getElementById("logo-leyenda").innerHTML = "";
+                document.getElementById("categoria-separacion").style.display = "none"
+            } else {
+                document.getElementById("categoria-separacion").style.display = "flex"
+                document.getElementById("logo-leyenda").innerHTML = `
+                    <div><img class="logo-leyenda" src="${data.selectedData.value}"></div>
+                `
+            }
+        }
+    })
 }
+
 function cargarCheckboxDescriptores() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     var imagenContainer = document.getElementById("imagenContainer");
@@ -167,54 +211,19 @@ function descargarLogo(){
 
 document.addEventListener("DOMContentLoaded", function(){
  
-    cargarSelectCategorias()
+    cargarSelectCategoriasSinreserva()
+
+    cargarSelectCategoriasConreserva()
 
     cargarSelectLeyendas()
 
     cargarCheckboxDescriptores();
 
-    selectCatSinReserva.ddslick({
-        data: IMAGES_DATA.ddDataSinReserva,
-        selectText: "Categoría sin reservas",
-        onSelected: function(data){
-            document.getElementById("logo-categoria").innerHTML = `
-                <div><img class="logo-categoria" src="${data.selectedData.value}"></div>
-            `
-        }   
-    });
+    /* Funcion para sacar estilos de hover*/
+    const boton = document.getElementById("miBoton");
 
-    selectCatConReserva.ddslick({
-        data: IMAGES_DATA.ddDataConReserva,
-        selectText: "Categoría con reservas",
-        onSelected: function(data){
-            document.getElementById("logo-categoria").innerHTML = `
-                <div><img class="logo-categoria" src="${data.selectedData.value}"></div>
-            `
-        }   
-    });
-
-    selectLeyenda.ddslick({
-        data: IMAGES_DATA.ddDataLeyendas,
-        selectText: "Leyenda",
-        onSelected: function(data){
-            if(data.selectedData.value=="sinleyenda"){
-                document.getElementById("logo-leyenda").innerHTML = "";
-                document.getElementById("categoria-separacion").style.display = "none"
-            } else {
-                document.getElementById("categoria-separacion").style.display = "flex"
-                document.getElementById("logo-leyenda").innerHTML = `
-                    <div><img class="logo-leyenda" src="${data.selectedData.value}"></div>
-                `
-            }
-      
-        }
-    })
-
-/* Funcion para sacar estilos de hover*/
-const boton = document.getElementById("miBoton");
-
-setTimeout(function () {
-boton.style.transition = "background-color 0.3s, color 0.3s, transform 0.5s";
-}, 3000);
+    setTimeout(function () {
+        boton.style.transition = "background-color 0.3s, color 0.3s, transform 0.5s";
+    }, 3000);
 
 })
