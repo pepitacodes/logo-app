@@ -1,83 +1,83 @@
 :root {
-	--azul-principal: rgb(23, 6, 124);
-	--azul-secundario: rgb(41, 43, 168);
-	--color-fondo: rgb(0,0, 0);
-  --color-letra-blanca: #FFFFFF;
-	--gris: #666666;
+  --color-negro: rgb(0,0, 0);
+  --color-blanco: #ffffff;
   --fuente-helvetica: 'Helvetica Neue LT Pro', sans-serif;
   --estilo-letra: uppercase;
+  --font-weight: bold;
 }
 body {
-  padding: 50px;
-  padding-top: 10px;
+  padding: 3.125rem;
+  padding-top: 0.625rem;
   font-family: var(--fuente-helvetica);
   text-transform: var(--estilo-letra);
 }
+/* >>>>CONTENEDOR PRINCIPAL<<<< */
 .main-container {
   width: 100%;
   height: 100vh;
 }
 h1 {
-    text-align: center;
-    margin-bottom: auto;
-    font-size: 30px;
-    letter-spacing: 4px;
-    font-weight: bold;
     display: block;
-    color: var(--color-fondo);
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 2.6rem;
+    letter-spacing: 4px;
+    font-weight: var(--font-weight);
+    color: var(--color-negro);
 }
-h2, p {
-  color: black;
-  color: var(--color-letra-blanca);
-}
-/*
-.barra-vertical {
-  transform: rotate(-90deg);
-  width: 300px;
-  background-color: white;
-  height: 2px;
-  position: absolute;
-  left: 328px;
-  bottom: 146px;
-  position: relative; 
-} */
-
 .select-area {
   display: grid;
   grid-template-columns: 0.8fr 1.1fr 1fr;
   margin: 5%;
+  margin-top: 2rem;
   padding: 3%;
-  background-color: var(--color-fondo);
-}
-a {
-  color: #00B7FF;
+  background-color: var(--color-negro);
+} 
+h2{
+  color: var(--color-blanco);
 }
 label, a, input {
   font-size: 1rem;
 }
-button {
-  width: 250px;
-  border-radius: 30px;
-  border: black solid 5px;
-  background-color: white;
-  color: black;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: larger;
-  letter-spacing: 1px;
-  line-height: 3rem;
-  margin: 2rem auto;
+/* ddSlick */
+/* >>>>SELECT CATEGORIA Y LEYENDA/RESERVA<<<< */
+.dd-select{
+  height: max-content;
 }
-button:hover {
-  background-color: black;
-  color: white;
-  letter-spacing: 1.5px;
-  box-shadow: 0 4px 6px rgba(41, 40, 40, 0.1);
-  transform: scale(1.20);
-  cursor: pointer;
+.dd-container {
+  width: 600px;
 }
+.dd-selected{
+  height: 100px;
+}
+.dd-option, .dd-selected{
+  background-color: var(--color-negro);
+  color: var(--color-blanco)!important;
+  min-height: 2rem;
+}
+.dd-option:hover{
+  background-color: var(--color-negro) !important;
+}
+.dd-option-selected{
+  background-color: var(--color-negro) !important;
+}
+.dd-selected-image, .dd-option-image {
+  max-width:100%!important;
+}
+/* >>>>ESTILO DE CHECKBOX DESCRIPTORES<<<< */
+ .descriptores-container, .descriptores > label > img {
+   width: 100%;
+ }
+ .descriptores {
+   background-color: var(--color-negro);
+   display: grid;
+   grid-template-columns: 50px 0.5fr 10px; 
+   padding-top: 0px;
+   grid-gap: 10px; 
+ }
+ /* >>>>DIV DE IMAGEN RENDERIZADA<<<< */
 .logo-container {
-  background-color: black;
+  background-color: var(--color-negro);
   max-width: 100%;
   margin: 5%;
 }
@@ -89,47 +89,23 @@ button:hover {
   margin: auto 20%;
   align-items: center;
 }
-.descriptores-container {
- width: 100%;
-}
-.descriptores-title {
-  text-indent: 20px;
-}
-.descriptores {
-  background-color: var(--color-fondo);
-  display: grid;
-  grid-template-columns: 50px 0.5fr 10px; 
-  padding: 3%;
-  padding-top: 0px;
-  grid-gap: 10px; 
-}
-.descriptores label {
-  grid-row: auto; 
-  grid-column: auto;
-}
-.descriptores img {
-  grid-row: auto; 
-  grid-column: auto; 
-}
-.descriptores input[type="checkbox"] {
-  grid-row: auto; 
-  grid-column: auto; 
-}
 .first-container {
   display: flex;
   flex-direction: column;
 }
 .first-container img {
   height: auto;
-  max-width: 100%; 
+  width: 100%; 
 }
+/* >>>>DESCRIPTORES RENDERIZADOS<<<< */
 .imagenContainer img {
   margin: auto 5px;
 }
-.third-container {
-  display: flex;
-  flex-grow: 0.5;
-}
+/*
+.logo-categoria {
+  max-width: 500px;
+  min-width: 450px;
+}*/
 hr {
   color: white;
   width: 93%;
@@ -142,35 +118,45 @@ hr {
 .footer > img {
   width: 100%;
 }
-
-/* ddSlick */
-/*Estilos del select*/
-.dd-select{
-  height: max-content;
-}
-.dd-container {
-  width: 600px;
-}
-.dd-selected{
-  height: 100px;
-}
-.dd-option, .dd-selected{
-  background-color: var(--color-fondo);
-  color: white !important;
-  min-height: 2rem;
-}
-.dd-option:hover{
-  background-color: var(--color-fondo) !important;
-}
-
-.dd-option-selected{
-  background-color: var(--color-fondo) !important;
-}
-
-.dd-selected-image, .dd-option-image {
-  max-width:100%!important;
-}
+/* Estilo del boton */
 .button-div {
   display: flex;
   align-items: center;
+  padding-bottom: 200px;
 }
+button {
+  width: 250px;
+  border-radius: 30px;
+  border: black solid 5px;
+  background-color: var(--color-blanco);
+  color: var(--color-negro);
+  text-transform: var(--estilo-letra);
+  font-weight: 600;
+  font-size: larger;
+  letter-spacing: 1px;
+  line-height: 3rem;
+  margin: 2rem auto;
+}
+button:hover {
+  background-color: black;
+  color: var(--color-blanco);
+  letter-spacing: 1.5px;
+  box-shadow: 0 4px 6px rgba(41, 40, 40, 0.1);
+  transform: scale(1.20);
+  cursor: pointer;
+}
+
+@media  screen and (min-width: 1000) and (max-width: 1500px) {
+  /*estilos notebook*/
+}
+/*
+.barra-vertical {
+  transform: rotate(-90deg);
+  width: 300px;
+  background-color: white;
+  height: 2px;
+  position: absolute;
+  left: 328px;
+  bottom: 146px;
+  position: relative; 
+} */
