@@ -148,7 +148,7 @@ function cargarCheckboxDescriptores() {
         if (checkbox.checked) {
           var imagen = document.createElement("img");
           imagen.src = `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
-          imagen.width = 330;
+          imagen.width = 300;
           imagenesSeleccionadas.push({ checkbox, imagen }); // Agregar checkbox e imagen al array
         } else {
           // Filtrar el array para eliminar el elemento correspondiente
@@ -169,7 +169,7 @@ function cargarCheckboxDescriptores() {
 
 
 
-function descargarLogo(){
+/*function descargarLogo(){
     var scaleBy = 5;
     var w = 1920;
     var h = 1080;
@@ -205,8 +205,23 @@ function descargarLogo(){
         a.download = nombreLogo + '.png';
         a.click();
     })
-}
+} 
+*/
 
+function descargarLogo(){
+    html2canvas(document.querySelector("#logo")).then((canvas) => {
+        let a = document.createElement('a');
+        document.body.appendChild(a)
+        a.href = canvas.toDataURL("image/png", 1.0);
+        var nombreLogo = prompt("Ingrese el nombre del archivo: ");
+        if (!nombreLogo) {
+            alert("Ingrese el nombre del archivo.");
+            return;
+          }
+        a.download = nombreLogo + '.png';
+        a.click();
+    })
+}
 
 
 document.addEventListener("DOMContentLoaded", function(){
