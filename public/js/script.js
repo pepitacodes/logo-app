@@ -166,29 +166,15 @@ function cargarCheckboxDescriptores() {
     });
   }
   
-
-
-
-/*function descargarLogo(){
-    var scaleBy = 5;
-    var w = 1920;
-    var h = 1080;
-    var border = 0;
-    var div = document.querySelector("#logo");
-    var canvas1 = document.createElement('canvas')
-    canvas1.width = w * scaleBy;
-    canvas1.height = h * scaleBy;
-    canvas1.style.width = w + 'px';
-    canvas1.style.height = h + 'px';
-    canvas1.border= border;
-    var context = canvas1.getContext("2d", {willReadFrequently: true});
-    context.scale(scaleBy, scaleBy);
-// Manejo de errores: input vacio
+  function descargarLogo(){
+    let div = document.querySelector("#logo");
+    let w = div.offsetWidth - 1;
+    let h = div.offsetHeight - 1;
     html2canvas(div, {
-        canvas:canvas1,
         border: 0,
-        height: div.offsetHeight - 1,
-        width: div.offsetWidth -1,
+        height: h ,
+        width: w,
+        scale: 5,
         imageSmoothingEnabled: false
     })
     .then((canvas2) => {
@@ -196,7 +182,7 @@ function cargarCheckboxDescriptores() {
         document.body.appendChild(a)
         a.href = canvas2.toDataURL("image/png");
         //nombre del archivo con el cual se descarga 
-        var nombreLogo = prompt("Ingrese el nombre del archivo: ");
+        let nombreLogo = prompt("Ingrese el nombre del archivo: ");
         if (!nombreLogo) {
             // Mostrar un mensaje de error
             alert("Ingrese el nombre del archivo.");
@@ -206,22 +192,6 @@ function cargarCheckboxDescriptores() {
         a.click();
     })
 } 
-*/
-
-function descargarLogo(){
-    html2canvas(document.querySelector("#logo")).then((canvas) => {
-        let a = document.createElement('a');
-        document.body.appendChild(a)
-        a.href = canvas.toDataURL("image/png", 1.0);
-        var nombreLogo = prompt("Ingrese el nombre del archivo: ");
-        if (!nombreLogo) {
-            alert("Ingrese el nombre del archivo.");
-            return;
-          }
-        a.download = nombreLogo + '.png';
-        a.click();
-    })
-}
 
 
 document.addEventListener("DOMContentLoaded", function(){
