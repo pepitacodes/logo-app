@@ -52,6 +52,7 @@ function cargarSelectCategoriasSinreserva(){
     }
     selectCatSinReserva.ddslick({
         data: IMAGES_DATA.ddDataSinReserva,
+        width: 350,
         selectText: "Categoría sin reservas",
         onSelected: function(data){
             document.getElementById("logo-categoria").innerHTML = `
@@ -68,12 +69,13 @@ function cargarSelectCategoriasConreserva(){
         IMAGES_DATA.ddDataConReserva.push({
             imageSrc: imgUrl,
             value: imgUrl,
-            selected: false
+            selected: false,
         })
     }
     selectCatConReserva.ddslick({
         data: IMAGES_DATA.ddDataConReserva,
         selectText: "Categoría con reservas",
+        width: 350,
         onSelected: function(data){
             document.getElementById("logo-categoria").innerHTML = `
                 <div><img class="logo-categoria" src="${data.selectedData.value}"></div>
@@ -95,7 +97,7 @@ function cargarSelectLeyendas(){
     selectLeyenda.ddslick({
         data: IMAGES_DATA.ddDataLeyendas,
         selectText: "Leyenda",
-        width: 350,
+        width: 450,
         onSelected: function(data){
             if(data.selectedData.value=="sinleyenda"){
                 document.getElementById("logo-leyenda").innerHTML = "";
@@ -119,7 +121,8 @@ function cargarCheckboxDescriptores() {
         if (checkbox.checked) {
           var imagen = document.createElement("img");
           imagen.src = `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
-          imagen.width = 360;
+          imagen.style.objectFit = "contain";
+          imagen.style.width = "100%"; 
           imagenesSeleccionadas.push({ checkbox, imagen }); // Agregar checkbox e imagen al array
         } else {
           // Filtrar el array para eliminar el elemento correspondiente
