@@ -135,7 +135,7 @@ hr {
 }*/
 .footer {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 50px;
 }
 .footer > img {
   height: calc(100% - 100px);

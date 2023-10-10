@@ -153,6 +153,10 @@ function cargarCheckboxDescriptores() {
         // Actualizar el contenido del contenedor de imágenes
         imagenContainer.innerHTML = "";
         imagenesSeleccionadas.forEach(function (item) {
+            /*if (imagenesSeleccionadas.length > 5) {
+                item.imagen.style.width = "300";
+                item.imagen.style.height = "auto";
+              }*/
           imagenContainer.appendChild(item.imagen);
         });
       });
