@@ -71,20 +71,23 @@ h2{
    background-color: var(--color-negro);
    display: grid;
    grid-template-columns: 50px 0.7fr 10px; 
-   grid-column-gap: 40px;
    padding-top: 0px;
    grid-gap: 10px; 
  }
  /* >>>>DIV DE IMAGEN RENDERIZADA<<<< */
 .logo-container {
   background-color: var(--color-negro);
+  width: 100%;
+  height: calc(100% - 150px);
 }
 .images-container {
+  height: 500px;
   position: relative;
   padding-top: 150px;
-  padding-bottom: 80px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  grid-gap: 40px;
   margin: auto 20%;
   align-items: center;
 }
@@ -95,12 +98,13 @@ h2{
   height: 327px;
 }
 /* >>>>DESCRIPTORES RENDERIZADOS<<<< */
-.imagenContainer img {
-  width: 445px;
-  height: 82px;
-  /*margin: auto 5px;*/
+.imagenContainer {
+  max-height: 410px;
 }
-
+.imagenContainer img {
+  height: 82px;
+  flex: 1;
+}
 .logo-categoria {
   width: 545px;
   height: 245px;
@@ -131,9 +135,11 @@ hr {
 }*/
 .footer {
   text-align: center;
+  padding-top: 100px;
 }
 .footer > img {
-  width: 100%;
+  height: calc(100% - 100px);
+  width: calc(100%);
 }
 /* Estilo del boton */
 .button-div {
