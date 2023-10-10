@@ -81,11 +81,11 @@ h2{
   max-height: 1080px;
 }
 .images-container {
+  position: relative;
   padding-top: 150px;
   padding-bottom: 80px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: 40px; 
   margin: auto 20%;
   align-items: center;
 }
@@ -119,6 +119,18 @@ hr {
     margin-left: 16px;
     margin-bottom: 4px;
 }
+/*
+.barra-vertical {
+  bottom: 215px;
+  left: 100px;
+  position: absolute;
+  z-index: 1;
+  transform: translate(10px, 10px);
+  transform: rotate(90deg);
+  width: 33%;
+  left: 322px;
+  display: none;
+}*/
 .footer {
   text-align: center;
 }
@@ -156,14 +168,4 @@ button:hover {
 @media  screen and (min-width: 1000) and (max-width: 1500px) {
   /*estilos notebook*/
 }
-/*
-.barra-vertical {
-  transform: rotate(-90deg);
-  width: 300px;
-  background-color: white;
-  height: 2px;
-  position: absolute;
-  left: 328px;
-  bottom: 146px;
-  position: relative; 
-} */
+

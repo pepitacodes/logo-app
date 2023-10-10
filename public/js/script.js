@@ -111,6 +111,25 @@ function cargarSelectLeyendas(){
         }
     })
 }
+/*
+function hayDescriptores() {
+    let descriptores = document.getElementById("imagenContainer").children ?? null;
+    if (descriptores) {
+        return true;
+    } else{
+        return false;
+    }
+}
+function cargarBarraVertical() {
+    let barra = document.getElementById("barra-vertical");
+    if(hayDescriptores()) {
+        barra.style.display = "block";
+    }
+    else {
+        barra.style.display = "none";
+    }
+}
+*/
 function cargarCheckboxDescriptores() {
     var checkboxes = document.querySelectorAll('input[type="checkbox"]');
     var imagenContainer = document.getElementById("imagenContainer");
@@ -118,6 +137,7 @@ function cargarCheckboxDescriptores() {
     checkboxes.forEach(function (checkbox) {
       checkbox.addEventListener("change", function () {
         var descriptor = checkbox.getAttribute("name");
+        /*cargarBarraVertical();*/
         if (checkbox.checked) {
           var imagen = document.createElement("img");
           imagen.src = `./assets/descriptores-tematicos/descriporestrans/${descriptor}.png`;
