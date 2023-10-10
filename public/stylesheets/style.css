@@ -45,7 +45,7 @@ h2{
   width: 600px;
 }
 .dd-selected{
-  height: 70px;
+  height: 100px;
   font-size: 1.3rem;
 }
 .dd-option, .dd-selected{
@@ -60,7 +60,7 @@ h2{
   background-color: var(--color-negro) !important;
 }
 .dd-selected-image, .dd-option-image {
-  max-width:100%!important;
+  max-width:70%!important;
 }
 /* >>>>ESTILO DE CHECKBOX DESCRIPTORES<<<< */
  .descriptores-container, .descriptores > label > img {
@@ -95,7 +95,7 @@ h2{
 }
 .first-container img {
   height: auto;
-  width: 100%; 
+  width: 90%; 
 }
 /* >>>>DESCRIPTORES RENDERIZADOS<<<< */
 .imagenContainer img {
@@ -108,10 +108,16 @@ h2{
   max-width: 500px;
   min-width: 450px;
 }*/
+.logo-leyenda > img {
+  width: 99%;
+}
 hr {
-  color: white;
-  width: 93%;
-  margin: auto;
+    height: 2px;
+    background-color: white;
+    width: 84%;
+    margin: 0;
+    margin-left: 16px;
+    margin-bottom: 4px;
 }
 .footer {
   text-align: center;
